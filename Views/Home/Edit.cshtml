@@ -1,0 +1,136 @@
+﻿@model prjFinal.Models.TableFinalExams1091746
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="@Url.Action("Edit")" method="post">
+
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.訂單號碼)
+
+        <div class="form-group">
+            <label for="客戶編號" class="control-label col-md-2">客戶編號</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.客戶編號, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.客戶編號, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="員工編號" class="control-label col-md-2">員工編號</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.員工編號, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.員工編號, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="訂單日期" class="control-label col-md-2">訂單日期</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.訂單日期, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.訂單日期, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="要貨日期" class="control-label col-md-2">要貨日期</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.要貨日期, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.要貨日期, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨日期" class="control-label col-md-2">送貨日期</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨日期, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨日期, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨方式" class="control-label col-md-2">送貨方式</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨方式, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨方式, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="運費" class="control-label col-md-2">運費</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.運費, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.運費, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="收貨人" class="control-label col-md-2">收貨人</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.收貨人, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.收貨人, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨地址" class="control-label col-md-2">送貨地址</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨地址, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨地址, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨城市" class="control-label col-md-2">送貨城市</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨城市, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨城市, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨行政區" class="control-label col-md-2">送貨行政區</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨行政區, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨行政區, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨郵遞區號" class="control-label col-md-2">送貨郵遞區號</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨郵遞區號, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨郵遞區號, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="送貨國家地區" class="control-label col-md-2">送貨國家地區</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.送貨國家地區, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.送貨國家地區, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Prog3")
+    </div>
+
+</form>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

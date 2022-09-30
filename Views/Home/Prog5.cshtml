@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "臺灣豬證明標章商家資料";
+}
+<script>
+    $(document).ready(function () {
+        var dataurl = "http://localhost:57764/JSON/ODwsvTransService.json";
+        $.ajax({
+            url: dataurl,
+            type: 'GET',
+            success: function (data) {
+                alert("臺灣豬證明標章商家資料" + data.length + "筆記錄");
+                for (var i = 0; i < data.length; i++) {
+                    $("#tableshow").append
+                        (
+                            "<tr>" +
+                            "<td>" + data[i].case_code + "</td>" +
+                            "<td>" + data[i].market_name + "</td>" +
+                            "<td>" + data[i].addr + "</td>" +
+                            "<td>" + data[i].context+ "</td>" +
+                            "<td>" + data[i].type + "</td>" +
+                            "<td>" + data[i].badge_code + "</td>" +
+                            "<td><a href='https://www.google.com.tw/maps/place/" + data[i].addr +
+                            " 'target='_blank' class='btn btn-info'>地圖</td>" +
+                            "</tr>"
+                        );
+                }
+            }
+        });
+    });
+</script>
+<h2>臺灣豬證明標章商家資料</h2>
+<table class="table " id="tableshow">
+    <tr>
+        <th>商家編號</th>
+        <th>商家名稱</th>
+        <th>地址</th>
+        <th>內容</th>
+        <th>商家型態</th>
+        <th>證號</th>
+        <th></th>
+    </tr>
+</table>

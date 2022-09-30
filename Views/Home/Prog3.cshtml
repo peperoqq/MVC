@@ -1,0 +1,56 @@
+﻿@model prjFinal.Models.Class1
+@{
+    ViewBag.Title = "Prog3";
+}
+
+<h2>員工訂單查詢</h2>
+<div class="row">
+    <div class="col-md-3">
+        <p>@Html.ActionLink("宜蘭市", "Prog3", new { cid = "宜蘭市" })</p>
+        <p>@Html.ActionLink("台中市", "Prog3", new { cid = "台中市" })</p>
+        <p>@Html.ActionLink("新竹市", "Prog3", new { cid = "新竹市" })</p>
+        <p>@Html.ActionLink("高雄市", "Prog3", new { cid = "高雄市" })</p>
+        <p>@Html.ActionLink("南投縣", "Prog3", new { cid = "南投縣" })</p>
+        <p>@Html.ActionLink("苗栗縣", "Prog3", new { cid = "苗栗縣" })</p>
+        <p>@Html.ActionLink("桃園縣", "Prog3", new { cid = "桃園縣" })</p>
+        <p>@Html.ActionLink("台北市", "Prog3", new { cid = "台北市" })</p>
+        <p>@Html.ActionLink("台北縣", "Prog3", new { cid = "台北縣" })</p>
+        <p>@Html.ActionLink("屏東縣", "Prog3", new { cid = "屏東縣" })</p>
+        <p>@Html.ActionLink("花蓮市", "Prog3", new { cid = "花蓮市" })</p>
+        <p>@Html.ActionLink("屏東市", "Prog3", new { cid = "屏東市" })</p>
+    </div>
+    <div class="col-md-9">
+
+        <table class="table">
+
+            <tr>
+                <th>送貨城市</th>
+                <th>訂單號碼</th>
+                <th>收貨人</th>
+                <th>送貨地址</th>
+            </tr>
+
+            @foreach (var item in Model.Table1091746)
+            {
+                <tr>
+                    <td>@item.送貨城市</td>
+                    <td>@item.訂單號碼</td>
+                    <td>@item.收貨人</td>
+                    <td>@item.送貨地址</td>
+                    <td>
+                        <a href="@Url.Action("Edit")?訂單號碼=@item.訂單號碼"
+                           class="btn btn-warning">
+                            編輯
+                        </a>
+                        <a href="@Url.Action("Delete")?訂單號碼=@item.訂單號碼"
+                           class="btn btn-danger"
+                           onclick="return confirm('確定要刪除編號 @item.訂單號碼 的紀錄嗎?');">
+                            刪除
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

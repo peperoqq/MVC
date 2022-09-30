@@ -1,0 +1,33 @@
+﻿@model List<System.String>
+@{
+    ViewBag.Title = "Prog4";
+}
+
+
+<div class="form-horizontal">
+    <form method="post" action="@Url.Action("Prog4")">
+        <div>
+
+        </div>
+        <div class="form-group">
+            <label for="送貨城市" class="control-label col-md-2">送貨城市</label>
+            <div class="col-md-10">
+                <select input id="送貨城市" name="city" class="form-control">
+
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item">@item </option>
+                    }
+
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="查詢" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<prjFinal.Models.TableFinalExams1091746>
+@{
+    ViewBag.Title = "QueryById";
+}
+
+<table class="table table-striped">
+    <div class="panel panel-info">
+        @if (Model.Count() >= 1)
+        {
+            <tr>
+                <th>訂單號碼</th>
+                <th>客戶編號</th>
+                <th>訂單日期</th>
+                <th>收貨人</th>
+                <th>送貨地址</th>
+            </tr>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.訂單號碼</td>
+                    <td>@item.客戶編號</td>
+                    <td>@item.訂單日期</td>
+                    <td>@item.收貨人  </td>
+                    <td>@item.送貨地址</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <div class="panel-heading">無符合之資料</div>
+        }
+</table>
+

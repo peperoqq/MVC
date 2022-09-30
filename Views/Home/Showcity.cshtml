@@ -1,0 +1,45 @@
+﻿@model IEnumerable<prjFinal.Models.TableFinalExams1091746>
+@{
+    ViewBag.Title = "送貨城市";
+}
+
+<h2>Showcity</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>訂單號碼</th>
+        <th>客戶編號</th>
+        <th>員工編號</th>
+        <th>訂單日期</th>
+        <th>要貨日期</th>
+        <th>送貨日期</th>
+        <th>送貨方式</th>
+        <th>運費</th>
+        <th>收貨人</th>
+        <th>送貨地址</th>
+        <th>送貨城市</th>
+        <th>送貨行政區</th>
+        <th>送貨郵遞區號</th>
+        <th>送貨國家地區</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.訂單號碼</td>
+            <td>@item.客戶編號</td>
+            <td>@item.員工編號</td>
+            <td>@item.訂單日期</td>
+            <td>@item.要貨日期</td>
+            <td>@item.送貨日期</td>
+            <td>@item.送貨方式</td>
+            <td>@item.運費</td>
+            <td>@item.收貨人</td>
+            <td>@item.送貨地址</td>
+            <td>@item.送貨城市</td>
+            <td>@item.送貨行政區</td>
+            <td>@item.送貨郵遞區號</td>
+            <td>@item.送貨國家地區</td>
+        </tr>
+    }
+</table>
+
